@@ -9,10 +9,66 @@ ProCAD is an R script to normalized coverage data from next-generation-sequencin
 R --no-save zscore.R 'the folder contains raw coverage data'.
 ```
 
+## Input #1, sequencing coverage data
+
 The coverage data should be pre-formatted as following
 chrom start_position  raw_coverage_in_doubles
 chrX    155200000       5.10025
 .....
+
+## Input #2, 'segments.txt'
+
+A pre-defined segments files should be prepared under the directory of this scripts. 
+The normalized coverages for each of segments will be calculated.
+kayo	chrom	loc.start	loc.end
+chr1p	chr01	0	121100000
+chr1q	chr01	128000000	249000000
+chr2p	chr02	0	91000000
+chr2q	chr02	95700000	242800000
+chr3p	chr03	0	89400000
+chr3q	chr03	93200000	197800000
+chr4p	chr04	0	48700000
+chr4q	chr04	52400000	190800000
+chr5p	chr05	0	45800000
+chr5q	chr05	50500000	180600000
+chr6p	chr06	0	58400000
+chr6q	chr06	63400000	170800000
+chr7p	chr07	0	57400000
+chr7q	chr07	61100000	158800000
+chr8p	chr08	0	43200000
+chr8q	chr08	48100000	146000000
+chr9p	chr09	0	46700000
+chr9q	chr09	60300000	141000000
+chr10p	chr10	0	38800000
+chr10q	chr10	42100000	135200000
+chr11p	chr11	0	51400000
+chr11q	chr11	56400000	134800000
+chr12p	chr12	0	35400000
+chr12q	chr12	36500000	133600000
+chr13q	chr13	19000000	114800000
+chr14q	chr14	19000000	107000000
+chr15q	chr15	20000000	102200000
+chr16p	chr16	0	34400000
+chr16q	chr16	40700000	90000000
+chr17p	chr17	0	22100000
+chr17q	chr17	23200000	80800000
+chr18p	chr18	0	15400000
+chr18q	chr18	17300000	77800000
+chr19p	chr19	0	26700000
+chr19q	chr19	30200000	58800000
+chr20p	chr20	0	25700000
+chr20q	chr20	28400000	62400000
+chr21p	chr21	0	10000000
+chr21q	chr21	13200000	47800000
+chr22p	chr22	0	9600000
+chr22q	chr22	11800000	51000000
+
+## Outputs 'dat.txt'
+A matrix of corverages for each segments of each sample will be generated.
+SampleID  chr01p  chr01q  chr02 ....
+sample01  0.1235 -0.1001  0.0003
+sample02
+....
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
